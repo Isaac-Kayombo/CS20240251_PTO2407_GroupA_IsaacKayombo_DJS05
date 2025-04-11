@@ -39,4 +39,12 @@ function theStore(reducer) {
         console.log(`New state:`, state);
         listeners.forEach(listener => listener());
     }
+
+    // SUBSCRIBING TO STATE CHANGES
+    function subscribe(listener) {
+        listeners.push(listener);
+        return () => {
+            listeners = listeners.filter(l => l !== listener);
+        };
+    }
 }
