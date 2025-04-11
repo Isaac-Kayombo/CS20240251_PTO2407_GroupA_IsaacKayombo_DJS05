@@ -57,3 +57,26 @@ function theStore(reducer) {
         subscribe
     };
 }
+// ---------------------
+
+// TALLY APP USAGE
+const store = theStore(theReducer);
+
+console.log('Initial state:', store.getState()); // LOGS INITIAL STATE
+
+// SUBSCRIBES LOG CHANGES
+store.subscribe(() => {
+    console.log('State changed:', store.getState());
+});
+
+// ADD TWICE, COUNT SHOULD BE 2
+store.dispatch({ type: ADD });
+store.dispatch({ type: ADD });
+
+// SUBTRACT ONCE, COUNT SHOULD BE 1
+store.dispatch({ type: SUBTRACT });
+
+// RESET, COUNT SHOULD BE 0
+store.dispatch({ type: RESET });
+
+// ------------------------------
