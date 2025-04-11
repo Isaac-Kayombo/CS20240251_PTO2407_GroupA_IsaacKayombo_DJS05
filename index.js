@@ -26,4 +26,9 @@ function theReducer(state = { count: 0 }, action) {
 function theStore(reducer) {
     let state;
     let listeners = [];
+
+    // GETS CURRENT STATE
+    function getState() {
+        return state;
+    }
 }
