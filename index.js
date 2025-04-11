@@ -31,4 +31,12 @@ function theStore(reducer) {
     function getState() {
         return state;
     }
+
+    // DISPATCHING THE ACTIONS
+    function dispatch(action) {
+        console.log(`Dispatching action:`, action);
+        state = reducer(state, action);
+        console.log(`New state:`, state);
+        listeners.forEach(listener => listener());
+    }
 }
