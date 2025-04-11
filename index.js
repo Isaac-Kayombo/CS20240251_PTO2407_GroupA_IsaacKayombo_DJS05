@@ -20,3 +20,10 @@ function theReducer(state = { count: 0 }, action) {
     }
 }
 // ------------------
+
+// CREATING STORE... REDUX STYLE
+
+function theStore(reducer) {
+    let state;
+    let listeners = [];
+}
