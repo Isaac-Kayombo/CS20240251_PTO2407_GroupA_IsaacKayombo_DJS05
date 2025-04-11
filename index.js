@@ -47,4 +47,13 @@ function theStore(reducer) {
             listeners = listeners.filter(l => l !== listener);
         };
     }
+
+    // INITIALIZE A ACTION
+    dispatch({ type: '@@INIT' });
+
+    return {
+        getState,
+        dispatch,
+        subscribe
+    };
 }
